@@ -8,6 +8,13 @@ const Home = () => {
   const [selectedRegion, setSelectedRegion] = useState('Filter by Region')
   const regions = ['Africa', 'America', 'Asia', 'Europe', 'Oceania']
 
+  const onChange = (e) => {
+    setSelectedRegion((prevState) => ({
+      ...prevState,
+      [e.target.name]: e.target.value,
+    }))
+  }
+
   return (
     <div>
       <Navbar />
@@ -15,7 +22,12 @@ const Home = () => {
       <form className='mx-5 my-8'>
         <div className='flex items-center gap-5 px-14 py-4 shadow-md'>
           <GoSearch />
-          <input type='text' placeholder='Search for a country...' />
+          <input
+            type='search'
+            placeholder='Search for a country...'
+            onClick={onChange}
+            className='cursur-pointer focus:outline-none'
+          />
         </div>
 
         <div className='relative'>
