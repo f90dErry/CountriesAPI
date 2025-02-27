@@ -1,7 +1,7 @@
-import Navbar from '../Components/Navbar'
 import { GoSearch } from 'react-icons/go'
 import { useState } from 'react'
 import { IoChevronDownOutline } from 'react-icons/io5'
+import Country from './Country'
 
 const Home = () => {
   const [region, setRegion] = useState(false)
@@ -14,8 +14,6 @@ const Home = () => {
 
   return (
     <div className=''>
-      <Navbar />
-
       <form className='mx-5 my-8 md:mx-24'>
         <div className='md:flex md:justify-between md:items-center'>
           <div className='flex items-center gap-5 px-10 py-4 shadow-md md:w-1/3'>
@@ -39,7 +37,7 @@ const Home = () => {
             </button>
 
             {region && (
-              <ul className='absolute rounded-lg shadow-md overflow-hidden md:w-full p-5'>
+              <ul className='absolute rounded-lg shadow-md overflow-hidden w-[43%] md:w-full p-5'>
                 {regions.map((region, index) => (
                   <li
                     key={index}
@@ -56,6 +54,8 @@ const Home = () => {
           </div>
         </div>
       </form>
+
+      <Country />
     </div>
   )
 }
