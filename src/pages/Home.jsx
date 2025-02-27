@@ -9,10 +9,7 @@ const Home = () => {
   const regions = ['Africa', 'America', 'Asia', 'Europe', 'Oceania']
 
   const onChange = (e) => {
-    setSelectedRegion((prevState) => ({
-      ...prevState,
-      [e.target.name]: e.target.value,
-    }))
+    e.target.value
   }
 
   return (
@@ -25,13 +22,14 @@ const Home = () => {
           <input
             type='search'
             placeholder='Search for a country...'
-            onClick={onChange}
+            onChange={onChange}
             className='cursur-pointer focus:outline-none'
           />
         </div>
 
         <div className='relative'>
           <button
+            type='button'
             onClick={() => setRegion(!region)}
             className='flex items-center justify-between gap-10 p-4 my-4 shadow-md'
           >
@@ -40,7 +38,7 @@ const Home = () => {
           </button>
 
           {region && (
-            <ul className='absolute rounded-lg shadow-md'>
+            <ul className='absolute rounded-lg shadow-md overflow-hidden'>
               {regions.map((region, index) => (
                 <li
                   key={index}
