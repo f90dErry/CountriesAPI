@@ -13,45 +13,47 @@ const Home = () => {
   }
 
   return (
-    <div>
+    <div className=''>
       <Navbar />
 
-      <form className='mx-5 my-8'>
-        <div className='flex items-center gap-5 px-14 py-4 shadow-md'>
-          <GoSearch />
-          <input
-            type='search'
-            placeholder='Search for a country...'
-            onChange={onChange}
-            className='cursur-pointer focus:outline-none'
-          />
-        </div>
+      <form className='mx-5 my-8 md:mx-24'>
+        <div className='md:flex md:justify-between md:items-center'>
+          <div className='flex items-center gap-5 px-10 py-4 shadow-md md:w-1/3'>
+            <GoSearch />
+            <input
+              type='search'
+              placeholder='Search for a country...'
+              onChange={onChange}
+              className='cursur-pointer focus:outline-none'
+            />
+          </div>
 
-        <div className='relative'>
-          <button
-            type='button'
-            onClick={() => setRegion(!region)}
-            className='flex items-center justify-between gap-10 p-4 my-4 shadow-md'
-          >
-            {selectedRegion}
-            <IoChevronDownOutline />
-          </button>
+          <div className='relative'>
+            <button
+              type='button'
+              onClick={() => setRegion(!region)}
+              className='flex items-center justify-between gap-10 p-4 my-4 shadow-md'
+            >
+              {selectedRegion}
+              <IoChevronDownOutline />
+            </button>
 
-          {region && (
-            <ul className='absolute rounded-lg shadow-md overflow-hidden'>
-              {regions.map((region, index) => (
-                <li
-                  key={index}
-                  onClick={() => {
-                    setSelectedRegion(region)
-                    setRegion(false)
-                  }}
-                >
-                  {region}
-                </li>
-              ))}
-            </ul>
-          )}
+            {region && (
+              <ul className='absolute rounded-lg shadow-md overflow-hidden md:w-full p-5'>
+                {regions.map((region, index) => (
+                  <li
+                    key={index}
+                    onClick={() => {
+                      setSelectedRegion(region)
+                      setRegion(false)
+                    }}
+                  >
+                    {region}
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
         </div>
       </form>
     </div>
