@@ -26,15 +26,15 @@ const Countries = () => {
       {loading ? (
         <h1>Loading...</h1>
       ) : (
-        <div className='grid grid-cols-1 gap-10 md:grid-cols-3 lg:grid-cols-4 mx-3 md:gap-10'>
+        <div className='grid grid-cols-1 gap-10 md:gap-20 md:grid-cols-3 w-full lg:grid-cols-4 mx-3 '>
           {country.map((country, index) => (
-            <div key={index} className='shadow-md rounded-lg pb-8'>
+            <div key={index} className='shadow-md w-4/5 rounded-lg pb-8'>
               <img
                 src={country.flags.png}
                 alt={country.name.common}
                 className='h-48 w-full object-cover mb-2 rounded-t-lg'
               />
-              <div className='p-5 text-sm flex flex-col gap-2'>
+              <div className='p-5 text-xs flex flex-col gap-2'>
                 <h2 className='text-xl font-bold my-3'>
                   {country.name.common}
                 </h2>
