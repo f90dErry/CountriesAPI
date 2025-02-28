@@ -1,7 +1,7 @@
 import { GoSearch } from 'react-icons/go'
 import { useState } from 'react'
 import { IoChevronDownOutline } from 'react-icons/io5'
-import Country from './Country'
+import Countries from './Countries'
 
 const Home = () => {
   const [region, setRegion] = useState(false)
@@ -55,7 +55,7 @@ const Home = () => {
         </div>
       </form>
 
-      <Country />
+      <Countries />
     </div>
   )
 }

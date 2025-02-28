@@ -1,7 +1,8 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import Home from './pages/Home'
-import Country from './pages/Country'
 import Navbar from './Components/Navbar'
+import Countries from './pages/Countries'
+import Country from './pages/Country'
 
 const App = () => {
   return (
@@ -10,6 +11,7 @@ const App = () => {
       <Router>
         <Routes>
           <Route path='/' element={<Home />} />
+          <Route path='/:countries' element={<Countries />} />
           <Route path='/:country' element={<Country />} />
         </Routes>
       </Router>
