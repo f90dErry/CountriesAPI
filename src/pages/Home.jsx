@@ -14,7 +14,7 @@ const Home = () => {
 
   return (
     <div className=''>
-      <form className='mx-5 my-8 md:mx-24'>
+      <form className='mx-5 my-5 md:mx-24'>
         <div className='md:flex md:justify-between md:items-center'>
           <div className='flex items-center gap-5 px-10 py-4 shadow-md md:w-1/3'>
             <GoSearch />
