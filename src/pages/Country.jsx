@@ -46,11 +46,11 @@ const Country = () => {
                     className='my-10 w-full h-[300px] md:h-[400px] md:w-[600px] object-cover'
                   />
                   <div>
-                    <h3 className='text-2xl my-5 font-bold md:font-extrabold '>
+                    <h3 className='text-2xl my-5 font-bold md:text-3xl md:font-extrabold '>
                       {country.name?.common}
                     </h3>
                     <div className='md:flex gap-32'>
-                      <div className='flex flex-col mb-8 gap-2'>
+                      <div className='flex flex-col mb-8 gap-1'>
                         <h4>
                           <span className='font-bold'>Native Name: </span>
                           {country.name?.nativeName?.eng?.common}
@@ -75,7 +75,7 @@ const Country = () => {
                         </h4>
                       </div>
 
-                      <div className='flex flex-col gap-2'>
+                      <div className='flex flex-col gap-1'>
                         <h4>
                           <span className='font-bold'>Top Level Domain: </span>
                           {country.tld}
@@ -97,16 +97,23 @@ const Country = () => {
                         </h4>
                       </div>
                     </div>
-                    <h4 className='my-8 flex flex-col md:flex-row gap-2'>
-                      <span className='font-bold'>Border Countries: </span>
-                      {country.borders.map((border, index) => (
-                        <button
-                          className='bg-white shadow-md px-5 md:px-10 p-1 mx-1'
-                          key={index}
-                        >
-                          {border}
-                        </button>
-                      ))}
+
+                    <h4 className='mt-5 flex flex-col md:flex-row md:gap-5 md:items-center'>
+                      <span className='font-bold'>Border Countries:</span>
+                      {country.borders?.length > 0 ? (
+                        <div className='flex flex-wrap gap-2'>
+                          {country.borders.map((border, index) => (
+                            <button
+                              key={index}
+                              className='shadow-md px-5 md:px-10 py-1 rounded-md'
+                            >
+                              {border}
+                            </button>
+                          ))}
+                        </div>
+                      ) : (
+                        ' None'
+                      )}
                     </h4>
                   </div>
                 </div>
