@@ -4,17 +4,25 @@ import { IoChevronDownOutline } from 'react-icons/io5'
 import Countries from './Countries'
 
 const Home = () => {
+  const [search, setSearch] = useState('')
   const [region, setRegion] = useState(false)
-  const [selectedRegion, setSelectedRegion] = useState('Filter by Region')
-  const regions = ['Africa', 'America', 'Asia', 'Europe', 'Oceania']
+  const [selectedRegion, setSelectedRegion] = useState('')
+  const regions = [
+    'Filter by Region',
+    'Africa',
+    'America',
+    'Asia',
+    'Europe',
+    'Oceania',
+  ]
 
   const onChange = (e) => {
-    e.target.value
+    setSearch(e.target.value)
   }
 
   return (
     <div className=''>
-      <form className='mx-5 md:mx-24'>
+      <form onClick={() => setRegion(!region)} className='mx-5 md:mx-24'>
         <div className='md:flex md:justify-between md:items-center my-7 md:my-10'>
           <div className='flex items-center rounded-lg gap-5 px-10 py-4 shadow-md md:w-1/3'>
             <GoSearch />
@@ -29,10 +37,10 @@ const Home = () => {
           <div className='relative'>
             <button
               type='button'
-              onClick={() => setRegion(!region)}
               className='flex items-center justify-between rounded-lg gap-10 p-4 my-6 md:my-0 shadow-md'
+              onClick={() => setRegion(!region)}
             >
-              {selectedRegion}
+              {selectedRegion || 'Filter by Region'}
               <IoChevronDownOutline />
             </button>
 
@@ -55,7 +63,7 @@ const Home = () => {
         </div>
       </form>
 
-      <Countries />
+      <Countries search={search} selectedRegion={selectedRegion} />
     </div>
   )
 }
