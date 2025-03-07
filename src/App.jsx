@@ -3,11 +3,30 @@ import Home from './pages/Home'
 import Navbar from './Components/Navbar'
 import Countries from './pages/Countries'
 import Country from './pages/Country'
+import { useState, useEffect } from 'react'
 
 const App = () => {
+  const [darkMode, setDarkMode] = useState(
+    () => localStorage.getItem('theme') === 'dark'
+  )
+
+  const toggleDarkMode = () => {
+    setDarkMode(!darkMode)
+  }
+
+  useEffect(() => {
+    if (darkMode) {
+      document.documentElement.classList.add('dark')
+      localStorage.setItem('theme', 'dark')
+    } else {
+      document.documentElement.classList.remove('dark')
+      localStorage.setItem('theme', 'light')
+    }
+  }, [darkMode])
+
   return (
-    <>
-      <Navbar />
+    <div className={`min-h-screen ${darkMode ? 'dark' : ''}`}>
+      <Navbar darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
       <Router>
         <Routes>
           <Route path='/' element={<Home />} />
@@ -15,7 +34,7 @@ const App = () => {
           <Route path='/country/:name' element={<Country />} />
         </Routes>
       </Router>
-    </>
+    </div>
   )
 }
 

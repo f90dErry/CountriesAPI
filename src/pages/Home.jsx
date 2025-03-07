@@ -24,7 +24,7 @@ const Home = () => {
     <div className=''>
       <form onClick={() => setRegion(!region)} className='mx-5 md:mx-24'>
         <div className='md:flex md:justify-between md:items-center my-7 md:my-10'>
-          <div className='flex items-center rounded-lg gap-5 px-10 py-4 shadow-md md:w-1/3'>
+          <div className='flex items-center rounded-lg gap-5 px-10 py-4 shadow-md md:w-1/3 dark:bg-gray-700 dark:text-white'>
             <GoSearch />
             <input
               type='search'
@@ -37,7 +37,7 @@ const Home = () => {
           <div className='relative'>
             <button
               type='button'
-              className='flex items-center justify-between rounded-lg gap-10 p-4 my-6 md:my-0 shadow-md'
+              className='flex items-center justify-between rounded-lg gap-10 p-4 my-6 md:my-0 shadow-md dark:bg-gray-700 dark:text-white'
               onClick={() => setRegion(!region)}
             >
               {selectedRegion || 'Filter by Region'}
@@ -45,7 +45,7 @@ const Home = () => {
             </button>
 
             {region && (
-              <ul className='absolute rounded-lg shadow-md overflow-hidden w-[43%] md:w-full p-5 bg-white'>
+              <ul className='absolute rounded-lg shadow-md overflow-hidden top-16 md:w-full p-5 bg-white dark:bg-gray-700 dark:text-white'>
                 {regions.map((region, index) => (
                   <li
                     key={index}

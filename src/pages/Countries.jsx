@@ -39,11 +39,11 @@ const Countries = ({ selectedRegion, search }) => {
       ) : (
         <>
           {filteredCountries.length === 0 && <h1>No Country Found</h1>}
-          <div className='grid grid-cols-1 justify-items-center gap-10 md:gap-12 md:grid md:grid-cols-4 mx-3'>
+          <div className='grid grid-cols-1 justify-items-center gap-10 md:gap-12 md:grid md:grid-cols-4 mx-3 '>
             {filteredCountries.map((country, index) => (
               <div
                 key={index}
-                className='shadow-md h-[330px] w-2/3 md:w-full rounded-lg pb-8'
+                className='shadow-md h-[330px] w-2/3 md:w-full rounded-lg pb-8 dark:bg-gray-700 dark:text-white'
                 onClick={() => navigate(`/country/${country.name.common}`)}
               >
                 <img

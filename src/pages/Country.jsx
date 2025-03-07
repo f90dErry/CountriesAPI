@@ -25,7 +25,7 @@ const Country = () => {
   return (
     <div className='md:mx-24 mx-10'>
       <button
-        className='flex items-center gap-2 p-2 px-8 mt-8 shadow-lg '
+        className='flex items-center gap-2 p-2 px-8 mt-8 shadow-lg dark:bg-gray-700 dark:text-white'
         onClick={() => window.history.back()}
       >
         <IoArrowBack />
@@ -105,7 +105,7 @@ const Country = () => {
                           {country.borders.map((border, index) => (
                             <button
                               key={index}
-                              className='shadow-md px-5 md:px-10 py-1 rounded-md'
+                              className='shadow-md px-5 md:px-10 py-1 rounded-md dark:bg-gray-700 dark:text-white'
                             >
                               {border}
                             </button>
