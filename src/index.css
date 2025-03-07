@@ -5,3 +5,4 @@
 .dark {
   @apply bg-gray-800 text-white transition-colors duration-300;
 }
+@custom-variant dark (&:where(.dark, .dark *));
