@@ -14,9 +14,9 @@ const Home = () => {
 
   return (
     <div className=''>
-      <form className='mx-5 my-5 md:mx-24'>
-        <div className='md:flex md:justify-between md:items-center'>
-          <div className='flex items-center gap-5 px-10 py-4 shadow-md md:w-1/3'>
+      <form className='mx-5 md:mx-24'>
+        <div className='md:flex md:justify-between md:items-center my-7 md:my-10'>
+          <div className='flex items-center rounded-lg gap-5 px-10 py-4 shadow-md md:w-1/3'>
             <GoSearch />
             <input
               type='search'
@@ -30,14 +30,14 @@ const Home = () => {
             <button
               type='button'
               onClick={() => setRegion(!region)}
-              className='flex items-center justify-between gap-10 p-4 my-4 shadow-md'
+              className='flex items-center justify-between rounded-lg gap-10 p-4 my-6 md:my-0 shadow-md'
             >
               {selectedRegion}
               <IoChevronDownOutline />
             </button>
 
             {region && (
-              <ul className='absolute rounded-lg shadow-md overflow-hidden w-[43%] md:w-full p-5'>
+              <ul className='absolute rounded-lg shadow-md overflow-hidden w-[43%] md:w-full p-5 bg-white'>
                 {regions.map((region, index) => (
                   <li
                     key={index}
